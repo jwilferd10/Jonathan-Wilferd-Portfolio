@@ -1,0 +1,142 @@
+/* Colors we'll use throughout the webpage */
+:root {
+    --primary-color: #097392;
+    --secondary-color: #fff0ce;
+    --tertiary-color: #83b4b3;
+}
+
+/* Informs every element on the page not to have any margin or border */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Adding font style and uniform background color to the body */
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    background-color: var(--secondary-color);
+}
+
+/* This creates space between each Section */
+section {
+    padding: 60px;
+}
+
+/* This styles all the section-titles within the body, aligns texts to the center */
+.section-title {
+    font-size: 48px;
+    color: var(--primary-color);
+    border-bottom: 3px solid;
+    padding-bottom: 20px;
+    text-align: center;
+    margin: 0 auto 35px auto;
+    width: 50%;
+}
+
+/* START OF HEADER STYLE */
+
+/* */
+header {
+    padding: 20px 35px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color: var(--primary-color);
+}
+
+/* Making the font bold and larger, also adding light text-shadow */
+header h1 {
+    font-weight: bold;
+    font-size: 32px;
+    color: var(--tertiary-color);
+    margin: 0;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Styles header a elements, removed underlines on nav links and changed text color */
+header a {
+    text-decoration: none;
+    color: var(--tertiary-color);
+}
+
+/* Styling the Nav */
+header nav {
+    margin: 7px 0;
+}
+
+/* This makes the nav links act inline (REVIEW THIS!!) */
+header nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+}
+
+/* This creates space between each Nav options, also increases font size and adds text shadow */
+header nav ul li a {
+    padding: 10px 20px; 
+    font-weight: lighter;
+    font-size: 1.25vw;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* This hover effect changes the color of the nav links */
+header nav ul li a:hover {
+    background: var(--tertiary-color);
+    color: var(--secondary-color);
+    border-radius: 15px;
+    text-shadow: none;
+}
+
+/* START OF CONTACT ME STYLE */
+.contact div {
+    margin: 7px 0;
+}
+
+/* This removes the list style, lays the contact elements side by side */
+.contact ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none; 
+}
+
+/* This increases the font size, adds some color and shadow, also decreases the amount space between each link */
+.contact div ul li a {
+    padding: 10px 150px;
+    font-weight: lighter;
+    font-size: 1.25vw;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+/* Adds a hover effect to the contact options */
+.contact div ul li a:hover {
+    background: var(--tertiary-color);
+    color: var(--secondary-color);
+    border-radius: 15px;
+    text-shadow: none;
+}
+
+/* START OF FOOTER STYLE */
+
+/* Adds color to footer background and creates space between the two texts */
+footer {
+    width: 100%;
+    padding: 20px 35px;
+    background-color: var(--primary-color);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* Adds color to the text and increases the line-height */
+footer .footer-text {
+    line-height: 1.5;
+    color: var(--tertiary-color);
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
