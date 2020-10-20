@@ -176,6 +176,34 @@ header nav ul li a:hover {
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
+/* START OF WORK GRID */
+.work {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(8, 5vw);
+    grid-gap: 15px;
+}
+
+.work .grid-item {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.grid-item-1 {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 4;
+}
+
+.grid-item-2 {
+    grid-column-start: 4;
+    grid-column-end: 6;
+    grid-row-start: 1;
+    grid-row-end: 4;
+}
+
 /* START OF CONTACT ME STYLE */
 
 .contact div {
