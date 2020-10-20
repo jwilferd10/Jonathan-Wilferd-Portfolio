@@ -7,8 +7,8 @@
 
 /* Informs every element on the page not to have any margin or border */
 * {
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
     box-sizing: border-box;
 }
 
@@ -66,7 +66,7 @@ header nav {
     margin: 7px 0;
 }
 
-/* This makes the nav links act inline (REVIEW THIS!!) */
+/* This makes the nav links act inline */
 header nav ul {
     display: flex;
     flex-wrap: wrap;
@@ -117,7 +117,7 @@ header nav ul li a:hover {
 /* This just centers the paragraph and adds a bit of padding */
 .about p {
     text-align: center;
-    padding: 0px 50px 10px 50px;
+    padding-bottom: 50px;
 }
 
 /* This creates space amongst the pictures and adds flex */
@@ -129,11 +129,33 @@ header nav ul li a:hover {
     justify-content: space-evenly;
 }
 
-/* This adds padding, creating space between paragraph and images */
+/* This adds padding, creating space between paragraph and images, also adjusts the height and width of all about imgs */
 .about img {
-    height: auto;
     padding: 10px;
-    width: 30%;
+    width: auto;
+    min-height: 150px;
+    max-height: 500px;
+}
+
+/* Setting up a smooth animation that brings the images into the page from left to right */
+.about .images {
+    animation: slide-right 2s;
+    margin-top:0%;  
+    width: 100%;
+    height: auto;
+    vertical-align: middle;
+
+}
+
+/* This slides images to the right */
+@keyframes slide-right {
+  from {
+    margin-left: -100%;
+  }
+
+  to {
+    margin-left: 0%;
+  }
 }
 
 /* The element will remained blur until hovered on and re-blur when necessary */
@@ -148,17 +170,6 @@ header nav ul li a:hover {
     -webkit-filter: blur(0px); /* Chrome, Safari, Opera */
     filter: blur(0px);
     transition-duration: 1s;
-}
-
-/* This just styles the images width */
-.about #first-image {
-    width: 39%;
-
-}
-
-/* This just styles the images width */
-.about #third-image {
-    width: 20%;
 }
 
 /* START OF WORK STYLE */
@@ -177,17 +188,26 @@ header nav ul li a:hover {
 }
 
 /* START OF WORK GRID */
+
+/* Setting up a grid */
 .work {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(8, 5vw);
-    grid-gap: 15px;
+    grid-template-rows: repeat(8, 3vw);
+    grid-gap: 20px;
 }
 
+/* This icreases the width and height for our images within the grid item */
 .work .grid-item {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+/* This makes the boxes .6 transparent in  0.5 second time */
+.work .grid-item:hover img {
+    opacity: .6;
+    transition: 0.5s;
 }
 
 .grid-item-1 {
@@ -197,12 +217,27 @@ header nav ul li a:hover {
     grid-row-end: 4;
 }
 
+/* Styles the grid item */
+.grid-item-1 img {
+    width: 100%;
+    height: auto;
+    border: 2px solid var(--secondary-color);
+}
+
 .grid-item-2 {
     grid-column-start: 4;
     grid-column-end: 6;
     grid-row-start: 1;
     grid-row-end: 4;
 }
+
+/* Styles the grid item */
+.grid-item-2 img {
+    width: 100%;
+    height: auto;
+    border: 2px solid var(--secondary-color);
+}
+
 
 /* START OF CONTACT ME STYLE */
 
@@ -255,4 +290,82 @@ footer .footer-text {
     line-height: 1.5;
     color: var(--tertiary-color);
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+@media screen and (max-width: 768px) {
+
+    * {
+        overflow-x: hidden; 
+    }
+
+    /* HEADER MEDIA QUERIES */
+    header nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        list-style: none;
+    }
+    
+    /* This creates space between each Nav options, also increases font size and adds text shadow */
+    header nav ul li a {
+        padding: 10px 20px; 
+        font-weight: bold;
+        font-size: 3.00vw;
+    }
+
+    /* ABOUT MEDIA QUERIES */
+
+    /* This creates space amongst the pictures and adds flex */
+    .about div {
+        margin: 50px auto;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    /* This adds padding, creating space between paragraph and images */
+    .about img {
+        width: auto;;
+        height: auto;
+        margin-top: 20px;
+        margin-bottom: 20px; 
+    }
+
+    .about .images {
+        animation: none;
+        margin-top: none;
+    }
+
+    /* The element will remained blur until hovered on and re-blur when necessary */
+    .about .images img {
+        -webkit-filter: none;
+        filter: none;
+        transition-duration: none;
+    }
+
+    /* WORK GRID MEDIA QUERIES */
+    
+    .work .grid-item {
+        overflow-x: visible; 
+    }
+
+
+    /* CONTACT MEDIA QUERIES */
+    .contact ul li {
+        display: inline-block;
+        padding: 25px;
+        list-style: none; 
+    }
+
+    /* This increases the font size, adds some color and shadow, also decreases the amount space between each link */
+    .contact div ul li a {
+        font-weight: bold;
+        font-size: 5.00vw;
+        text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        text-decoration: none;
+        color: var(--primary-color);
+    }
+
 }
