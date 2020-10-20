@@ -36,13 +36,14 @@ section {
 
 /* START OF HEADER STYLE */
 
-/* */
+/* Creates space and adds color to the header, creates flex for child elements */
 header {
     padding: 20px 35px;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     background-color: var(--primary-color);
+    background: linear-gradient(rgba(9, 115, 146, 0.7), #024e76);
 }
 
 /* Making the font bold and larger, also adding light text-shadow */
@@ -90,7 +91,93 @@ header nav ul li a:hover {
     text-shadow: none;
 }
 
+/* START OF HERO STYLE */
+
+/* This adds an image to the hero, also sets up flex for it's child elements */
+.hero-style {
+    padding: 100px 50px;
+    background-image: url("../images/bg-jumbotron.jpg");
+    background-size: cover;
+    background-position: 80%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: flex start;
+}
+
+/* This moves the text to the right, sets the fonts color and changes font style */
+.hero-style h2 {
+    margin-left: auto;
+    color: var(--secondary-color);
+    font-style: italic;
+}
+
+/* START OF ABOUT ME STYLE */
+
+/* This just centers the paragraph and adds a bit of padding */
+.about p {
+    text-align: center;
+    padding: 0px 50px 10px 50px;
+}
+
+/* This creates space amongst the pictures and adds flex */
+.about div {
+    margin: 50px auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+/* This adds padding, creating space between paragraph and images */
+.about img {
+    height: auto;
+    padding: 10px;
+    width: 30%;
+}
+
+/* The element will remained blur until hovered on and re-blur when necessary */
+.about .images img {
+    -webkit-filter: blur(3px); /* Chrome, Safari, Opera */
+    filter: blur(3px);
+    transition-duration: 1s;
+}
+
+/* When hovered on the image will become clear */
+.about .images img:hover {
+    -webkit-filter: blur(0px); /* Chrome, Safari, Opera */
+    filter: blur(0px);
+    transition-duration: 1s;
+}
+
+/* This just styles the images width */
+.about #first-image {
+    width: 39%;
+
+}
+
+/* This just styles the images width */
+.about #third-image {
+    width: 20%;
+}
+
+/* START OF WORK STYLE */
+
+/* Right now this just creates a border and changes the background color of the section */
+.work-section {
+    border: thick double var(--tertiary-color);
+    background-color: var(--primary-color);
+    background: linear-gradient(rgba(9, 115, 146, 0.9), #024e76);
+}
+
+/* Changes the color of the header to secondary and applies shadow to make text stand out */
+.work-section h2 {
+    color: var(--secondary-color);
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
 /* START OF CONTACT ME STYLE */
+
 .contact div {
     margin: 7px 0;
 }
@@ -132,6 +219,7 @@ footer {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    background: linear-gradient(rgba(9, 115, 146, 0.9),#024e76);
 }
 
 /* Adds color to the text and increases the line-height */
